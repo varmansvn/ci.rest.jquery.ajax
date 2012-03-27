@@ -23,7 +23,7 @@ class UserBusiness extends Business {
     
     public function getUserList(&$userList) {
        
-       // get product list
+       // get user list
        $rtnCode = $this->userRepo->findAll($userList);
        if(STATUS_SUCCESS != $rtnCode){
            return $rtnCode;
