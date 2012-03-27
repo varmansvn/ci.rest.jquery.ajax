@@ -1964,3 +1964,49 @@ DEBUG - 2012-03-27 18:44:26 --> Session routines successfully run
 DEBUG - 2012-03-27 18:44:26 --> Controller Class Initialized
 DEBUG - 2012-03-27 18:44:26 --> Config file loaded: application/config/rest.php
 DEBUG - 2012-03-27 18:44:26 --> Helper loaded: inflector_helper
+DEBUG - 2012-03-27 19:42:34 --> Config Class Initialized
+DEBUG - 2012-03-27 19:42:34 --> Hooks Class Initialized
+DEBUG - 2012-03-27 19:42:34 --> Utf8 Class Initialized
+DEBUG - 2012-03-27 19:42:34 --> UTF-8 Support Enabled
+DEBUG - 2012-03-27 19:42:34 --> URI Class Initialized
+DEBUG - 2012-03-27 19:42:34 --> Router Class Initialized
+DEBUG - 2012-03-27 19:42:34 --> No URI present. Default controller set.
+DEBUG - 2012-03-27 19:42:34 --> Output Class Initialized
+DEBUG - 2012-03-27 19:42:34 --> Security Class Initialized
+DEBUG - 2012-03-27 19:42:34 --> Input Class Initialized
+DEBUG - 2012-03-27 19:42:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2012-03-27 19:42:34 --> Language Class Initialized
+DEBUG - 2012-03-27 19:42:34 --> Loader Class Initialized
+DEBUG - 2012-03-27 19:42:34 --> Helper loaded: url_helper
+DEBUG - 2012-03-27 19:42:34 --> Unit Testing Class Initialized
+DEBUG - 2012-03-27 19:42:34 --> Session Class Initialized
+DEBUG - 2012-03-27 19:42:34 --> Helper loaded: string_helper
+ERROR - 2012-03-27 19:42:34 --> The session cookie data did not match what was expected. This could be a possible hacking attempt.
+DEBUG - 2012-03-27 19:42:34 --> Session routines successfully run
+DEBUG - 2012-03-27 19:42:34 --> Controller Class Initialized
+DEBUG - 2012-03-27 19:42:34 --> File loaded: application/views/header.php
+DEBUG - 2012-03-27 19:42:34 --> File loaded: application/views/all_users.php
+DEBUG - 2012-03-27 19:42:34 --> File loaded: application/views/footer.php
+DEBUG - 2012-03-27 19:42:34 --> File loaded: application/views/layout.php
+DEBUG - 2012-03-27 19:42:34 --> Final output sent to browser
+DEBUG - 2012-03-27 19:42:34 --> Total execution time: 0.1689
+DEBUG - 2012-03-27 19:42:36 --> Config Class Initialized
+DEBUG - 2012-03-27 19:42:36 --> Hooks Class Initialized
+DEBUG - 2012-03-27 19:42:36 --> Utf8 Class Initialized
+DEBUG - 2012-03-27 19:42:36 --> UTF-8 Support Enabled
+DEBUG - 2012-03-27 19:42:36 --> URI Class Initialized
+DEBUG - 2012-03-27 19:42:36 --> Router Class Initialized
+DEBUG - 2012-03-27 19:42:36 --> Output Class Initialized
+DEBUG - 2012-03-27 19:42:36 --> Security Class Initialized
+DEBUG - 2012-03-27 19:42:36 --> Input Class Initialized
+DEBUG - 2012-03-27 19:42:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2012-03-27 19:42:36 --> Language Class Initialized
+DEBUG - 2012-03-27 19:42:36 --> Loader Class Initialized
+DEBUG - 2012-03-27 19:42:36 --> Helper loaded: url_helper
+DEBUG - 2012-03-27 19:42:36 --> Unit Testing Class Initialized
+DEBUG - 2012-03-27 19:42:36 --> Session Class Initialized
+DEBUG - 2012-03-27 19:42:36 --> Helper loaded: string_helper
+DEBUG - 2012-03-27 19:42:36 --> Session routines successfully run
+DEBUG - 2012-03-27 19:42:36 --> Controller Class Initialized
+DEBUG - 2012-03-27 19:42:36 --> Config file loaded: application/config/rest.php
+DEBUG - 2012-03-27 19:42:36 --> Helper loaded: inflector_helper
