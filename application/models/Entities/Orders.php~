@@ -1,0 +1,40 @@
+<?php
+
+
+
+/**
+ * Orders
+ *
+ * @Table(name="orders")
+ * @Entity
+ */
+class Orders
+{
+    /**
+     * @var integer $idOrder
+     *
+     * @Column(name="id_order", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idOrder;
+
+    /**
+     * @var datetime $createdAt
+     *
+     * @Column(name="created_at", type="datetime", nullable=true)
+     */
+    private $createdAt;
+
+    /**
+     * @var OrderStatusCodes
+     *
+     * @ManyToOne(targetEntity="OrderStatusCodes")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_order_status_code", referencedColumnName="id_order_status_code")
+     * })
+     */
+    private $fidOrderStatusCode;
+
+
+}

@@ -1,0 +1,63 @@
+<?php
+
+
+
+/**
+ * Customers
+ *
+ * @Table(name="customers")
+ * @Entity
+ */
+class Customers
+{
+    /**
+     * @var integer $idCustomer
+     *
+     * @Column(name="id_customer", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCustomer;
+
+    /**
+     * @var GenericProfiles
+     *
+     * @ManyToOne(targetEntity="GenericProfiles")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_generic_profile", referencedColumnName="id_generic_profile")
+     * })
+     */
+    private $fidGenericProfile;
+
+    /**
+     * @var CustomerTypes
+     *
+     * @ManyToOne(targetEntity="CustomerTypes")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_profile_type", referencedColumnName="id_customer_type")
+     * })
+     */
+    private $fidProfileType;
+
+    /**
+     * @var Users
+     *
+     * @ManyToOne(targetEntity="Users")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_user", referencedColumnName="id_user")
+     * })
+     */
+    private $fidUser;
+
+    /**
+     * @var CustomerStatusCodes
+     *
+     * @ManyToOne(targetEntity="CustomerStatusCodes")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_customer_status_code", referencedColumnName="id_customer_status_code")
+     * })
+     */
+    private $fidCustomerStatusCode;
+
+
+}

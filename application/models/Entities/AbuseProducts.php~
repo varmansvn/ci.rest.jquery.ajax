@@ -1,0 +1,43 @@
+<?php
+
+
+
+/**
+ * AbuseProducts
+ *
+ * @Table(name="abuse_products")
+ * @Entity
+ */
+class AbuseProducts
+{
+    /**
+     * @var integer $idAbuseProduct
+     *
+     * @Column(name="id_abuse_product", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idAbuseProduct;
+
+    /**
+     * @var Products
+     *
+     * @ManyToOne(targetEntity="Products")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_product", referencedColumnName="id_product")
+     * })
+     */
+    private $fidProduct;
+
+    /**
+     * @var AbuseReports
+     *
+     * @ManyToOne(targetEntity="AbuseReports")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_abuse_report", referencedColumnName="id_abuse_report")
+     * })
+     */
+    private $fidAbuseReport;
+
+
+}

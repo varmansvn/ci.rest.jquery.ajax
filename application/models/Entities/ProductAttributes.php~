@@ -1,0 +1,71 @@
+<?php
+
+
+
+/**
+ * ProductAttributes
+ *
+ * @Table(name="product_attributes")
+ * @Entity
+ */
+class ProductAttributes
+{
+    /**
+     * @var integer $idProductAttribute
+     *
+     * @Column(name="id_product_attribute", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idProductAttribute;
+
+    /**
+     * @var string $attributeName
+     *
+     * @Column(name="attribute_name", type="string", length=32, nullable=false)
+     */
+    private $attributeName;
+
+    /**
+     * @var string $attributeConstraint
+     *
+     * @Column(name="attribute_constraint", type="string", length=32, nullable=true)
+     */
+    private $attributeConstraint;
+
+    /**
+     * @var string $attributeScope
+     *
+     * @Column(name="attribute_scope", type="string", length=32, nullable=true)
+     */
+    private $attributeScope;
+
+    /**
+     * @var string $attributeDetail
+     *
+     * @Column(name="attribute_detail", type="string", length=128, nullable=true)
+     */
+    private $attributeDetail;
+
+    /**
+     * @var ProductClasses
+     *
+     * @ManyToOne(targetEntity="ProductClasses")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_product_class", referencedColumnName="id_product_class")
+     * })
+     */
+    private $fidProductClass;
+
+    /**
+     * @var AttributeTypes
+     *
+     * @ManyToOne(targetEntity="AttributeTypes")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_attribute_type", referencedColumnName="id_attribute_type")
+     * })
+     */
+    private $fidAttributeType;
+
+
+}

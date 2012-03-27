@@ -1,0 +1,47 @@
+<?php
+
+
+
+/**
+ * Cities
+ *
+ * @Table(name="cities")
+ * @Entity
+ */
+class Cities
+{
+    /**
+     * @var integer $idCity
+     *
+     * @Column(name="id_city", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCity;
+
+    /**
+     * @var string $cityName
+     *
+     * @Column(name="city_name", type="string", length=32, nullable=false)
+     */
+    private $cityName;
+
+    /**
+     * @var string $zipCode
+     *
+     * @Column(name="zip_code", type="string", length=32, nullable=true)
+     */
+    private $zipCode;
+
+    /**
+     * @var States
+     *
+     * @ManyToOne(targetEntity="States")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_state", referencedColumnName="id_state")
+     * })
+     */
+    private $fidState;
+
+
+}

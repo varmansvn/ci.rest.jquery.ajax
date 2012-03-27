@@ -1,0 +1,47 @@
+<?php
+
+
+
+/**
+ * Communes
+ *
+ * @Table(name="communes")
+ * @Entity
+ */
+class Communes
+{
+    /**
+     * @var integer $idCommune
+     *
+     * @Column(name="id_commune", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCommune;
+
+    /**
+     * @var string $communeName
+     *
+     * @Column(name="commune_name", type="string", length=32, nullable=false)
+     */
+    private $communeName;
+
+    /**
+     * @var string $zipCode
+     *
+     * @Column(name="zip_code", type="string", length=32, nullable=true)
+     */
+    private $zipCode;
+
+    /**
+     * @var Districts
+     *
+     * @ManyToOne(targetEntity="Districts")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_district", referencedColumnName="id_district")
+     * })
+     */
+    private $fidDistrict;
+
+
+}

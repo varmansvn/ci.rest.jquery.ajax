@@ -1,0 +1,30 @@
+<?php
+
+
+
+/**
+ * CompanyStatusCodes
+ *
+ * @Table(name="company_status_codes")
+ * @Entity
+ */
+class CompanyStatusCodes
+{
+    /**
+     * @var integer $idCompanyStatusCode
+     *
+     * @Column(name="id_company_status_code", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCompanyStatusCode;
+
+    /**
+     * @var string $companyStatusValue
+     *
+     * @Column(name="company_status_value", type="string", length=32, nullable=true)
+     */
+    private $companyStatusValue;
+
+
+}

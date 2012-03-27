@@ -1,0 +1,64 @@
+<?php
+
+
+
+/**
+ * Addresses
+ *
+ * @Table(name="addresses")
+ * @Entity
+ */
+class Addresses
+{
+    /**
+     * @var integer $idAddress
+     *
+     * @Column(name="id_address", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idAddress;
+
+    /**
+     * @var string $house
+     *
+     * @Column(name="house", type="string", length=32, nullable=true)
+     */
+    private $house;
+
+    /**
+     * @var string $street
+     *
+     * @Column(name="street", type="string", length=32, nullable=true)
+     */
+    private $street;
+
+    /**
+     * @var string $location
+     *
+     * @Column(name="location", type="string", length=255, nullable=true)
+     */
+    private $location;
+
+    /**
+     * @var Cities
+     *
+     * @ManyToOne(targetEntity="Cities")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_city", referencedColumnName="id_city")
+     * })
+     */
+    private $fidCity;
+
+    /**
+     * @var Villages
+     *
+     * @ManyToOne(targetEntity="Villages")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_village", referencedColumnName="id_village")
+     * })
+     */
+    private $fidVillage;
+
+
+}

@@ -1,0 +1,53 @@
+<?php
+/**
+ * User: varman
+ * Date: 2/16/12
+ * Time: 10:01 AM
+ * To change this template use File | Settings | File Templates.
+ */
+
+define('APPPATH', dirname(__FILE__) . '/');
+define('BASEPATH', APPPATH . '/../system/');
+define('ENVIRONMENT', 'production'); // IMPORTANT! This should match the value in CodeIgniter's /index.php
+
+chdir(APPPATH . '/libraries');
+
+require_once 'Doctrine/Common/ClassLoader.php';
+
+$classLoader = new \Doctrine\Common\ClassLoader('Doctrine');
+$classLoader->register();
+
+$classLoader = new \Doctrine\Common\ClassLoader('Symfony', 'Doctrine');
+$classLoader->register();
+
+$configFile = getcwd() . '/Doctrine.php';
+
+$helperSet = null;
+if (file_exists($configFile)) {
+    if ( ! is_readable($configFile)) {
+        trigger_error(
+            'Configuration file [' . $configFile . '] does not have read permission.', E_ERROR
+        );
+    }
+
+    require $configFile;
+
+    foreach ($GLOBALS as $helperSetCandidate) {
+        if ($helperSetCandidate instanceof \Symfony\Component\Console\Helper\HelperSet) {
+            $helperSet = $helperSetCandidate;
+            break;
+        }
+    }
+}
+
+echo $configFile;
+$doctrine = new Doctrine;
+$em = $doctrine->em;
+
+$helperSet = new \Symfony\Component\Console\Helper\HelperSet(array(
+    'db' => new \Doctrine\DBAL\Tools\Console\Helper\ConnectionHelper($em->getConnection()),
+    'em' => new \Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper($em)
+));
+
+\Doctrine\ORM\Tools\Console\ConsoleRunner::run($helperSet);
+

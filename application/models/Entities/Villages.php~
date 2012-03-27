@@ -1,0 +1,47 @@
+<?php
+
+
+
+/**
+ * Villages
+ *
+ * @Table(name="villages")
+ * @Entity
+ */
+class Villages
+{
+    /**
+     * @var integer $idVillage
+     *
+     * @Column(name="id_village", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idVillage;
+
+    /**
+     * @var string $villageName
+     *
+     * @Column(name="village_name", type="string", length=32, nullable=false)
+     */
+    private $villageName;
+
+    /**
+     * @var string $zipCode
+     *
+     * @Column(name="zip_code", type="string", length=32, nullable=true)
+     */
+    private $zipCode;
+
+    /**
+     * @var Communes
+     *
+     * @ManyToOne(targetEntity="Communes")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_commune", referencedColumnName="id_commune")
+     * })
+     */
+    private $fidCommune;
+
+
+}

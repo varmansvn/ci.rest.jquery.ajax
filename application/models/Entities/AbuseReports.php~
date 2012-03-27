@@ -1,0 +1,54 @@
+<?php
+
+
+
+/**
+ * AbuseReports
+ *
+ * @Table(name="abuse_reports")
+ * @Entity
+ */
+class AbuseReports
+{
+    /**
+     * @var integer $idAbuseReport
+     *
+     * @Column(name="id_abuse_report", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idAbuseReport;
+
+    /**
+     * @var string $abuseEvidence
+     *
+     * @Column(name="abuse_evidence", type="string", length=255, nullable=false)
+     */
+    private $abuseEvidence;
+
+    /**
+     * @var string $status
+     *
+     * @Column(name="status", type="string", length=32, nullable=false)
+     */
+    private $status;
+
+    /**
+     * @var datetime $reportedAt
+     *
+     * @Column(name="reported_at", type="datetime", nullable=true)
+     */
+    private $reportedAt;
+
+    /**
+     * @var Users
+     *
+     * @ManyToOne(targetEntity="Users")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_reporter", referencedColumnName="id_user")
+     * })
+     */
+    private $fidReporter;
+
+
+}

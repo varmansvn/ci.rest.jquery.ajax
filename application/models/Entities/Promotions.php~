@@ -1,0 +1,71 @@
+<?php
+
+
+
+/**
+ * Promotions
+ *
+ * @Table(name="promotions")
+ * @Entity
+ */
+class Promotions
+{
+    /**
+     * @var integer $idPromotion
+     *
+     * @Column(name="id_promotion", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idPromotion;
+
+    /**
+     * @var string $coupon
+     *
+     * @Column(name="coupon", type="string", length=32, nullable=false)
+     */
+    private $coupon;
+
+    /**
+     * @var string $couponDetail
+     *
+     * @Column(name="coupon_detail", type="string", length=128, nullable=true)
+     */
+    private $couponDetail;
+
+    /**
+     * @var integer $discount
+     *
+     * @Column(name="discount", type="integer", nullable=true)
+     */
+    private $discount;
+
+    /**
+     * @var datetime $createdAt
+     *
+     * @Column(name="created_at", type="datetime", nullable=true)
+     */
+    private $createdAt;
+
+    /**
+     * @var ProductClasses
+     *
+     * @ManyToOne(targetEntity="ProductClasses")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_product_class", referencedColumnName="id_product_class")
+     * })
+     */
+    private $fidProductClass;
+
+    /**
+     * @var PromotionStatusCodes
+     *
+     * @ManyToOne(targetEntity="PromotionStatusCodes")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_promotion_status_code", referencedColumnName="id_promotion_status_code")
+     * })
+     */
+    private $fidPromotionStatusCode;
+
+
+}

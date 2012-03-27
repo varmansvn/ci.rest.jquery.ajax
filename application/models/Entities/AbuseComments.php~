@@ -1,0 +1,43 @@
+<?php
+
+
+
+/**
+ * AbuseComments
+ *
+ * @Table(name="abuse_comments")
+ * @Entity
+ */
+class AbuseComments
+{
+    /**
+     * @var integer $idAbuseComments
+     *
+     * @Column(name="id_abuse_comments", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idAbuseComments;
+
+    /**
+     * @var Comments
+     *
+     * @ManyToOne(targetEntity="Comments")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_comment", referencedColumnName="id_comment")
+     * })
+     */
+    private $fidComment;
+
+    /**
+     * @var AbuseReports
+     *
+     * @ManyToOne(targetEntity="AbuseReports")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_abuse_report", referencedColumnName="id_abuse_report")
+     * })
+     */
+    private $fidAbuseReport;
+
+
+}

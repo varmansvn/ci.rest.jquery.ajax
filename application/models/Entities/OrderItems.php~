@@ -1,0 +1,85 @@
+<?php
+
+
+
+/**
+ * OrderItems
+ *
+ * @Table(name="order_items")
+ * @Entity
+ */
+class OrderItems
+{
+    /**
+     * @var integer $idOrderItems
+     *
+     * @Column(name="id_order_items", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idOrderItems;
+
+    /**
+     * @var integer $orderItemQuantity
+     *
+     * @Column(name="order_item_quantity", type="integer", nullable=false)
+     */
+    private $orderItemQuantity;
+
+    /**
+     * @var integer $orderItemPrice
+     *
+     * @Column(name="order_item_price", type="integer", nullable=false)
+     */
+    private $orderItemPrice;
+
+    /**
+     * @var string $orderItemDetail
+     *
+     * @Column(name="order_item_detail", type="string", length=128, nullable=true)
+     */
+    private $orderItemDetail;
+
+    /**
+     * @var Shipments
+     *
+     * @ManyToMany(targetEntity="Shipments", mappedBy="fidOrderItem")
+     */
+    private $fidShipment;
+
+    /**
+     * @var Orders
+     *
+     * @ManyToOne(targetEntity="Orders")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_order", referencedColumnName="id_order")
+     * })
+     */
+    private $fidOrder;
+
+    /**
+     * @var Currencies
+     *
+     * @ManyToOne(targetEntity="Currencies")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_order_item_price_unit", referencedColumnName="id_currency")
+     * })
+     */
+    private $fidOrderItemPriceUnit;
+
+    /**
+     * @var Products
+     *
+     * @ManyToOne(targetEntity="Products")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_product", referencedColumnName="id_product")
+     * })
+     */
+    private $fidProduct;
+
+    public function __construct()
+    {
+        $this->fidShipment = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+}

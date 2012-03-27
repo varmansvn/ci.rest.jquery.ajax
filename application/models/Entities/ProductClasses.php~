@@ -1,0 +1,67 @@
+<?php
+
+
+
+/**
+ * ProductClasses
+ *
+ * @Table(name="product_classes")
+ * @Entity
+ */
+class ProductClasses
+{
+    /**
+     * @var integer $idProductClass
+     *
+     * @Column(name="id_product_class", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idProductClass;
+
+    /**
+     * @var string $productClassName
+     *
+     * @Column(name="product_class_name", type="string", length=32, nullable=false)
+     */
+    private $productClassName;
+
+    /**
+     * @var string $productClassDetail
+     *
+     * @Column(name="product_class_detail", type="string", length=128, nullable=true)
+     */
+    private $productClassDetail;
+
+    /**
+     * @var ProductTypes
+     *
+     * @ManyToOne(targetEntity="ProductTypes")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_product_type", referencedColumnName="id_product_type")
+     * })
+     */
+    private $fidProductType;
+
+    /**
+     * @var Categories
+     *
+     * @ManyToOne(targetEntity="Categories")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_category", referencedColumnName="id_category")
+     * })
+     */
+    private $fidCategory;
+
+    /**
+     * @var CompanySectors
+     *
+     * @ManyToOne(targetEntity="CompanySectors")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_company_sector", referencedColumnName="id_company_sectors")
+     * })
+     */
+    private $fidCompanySector;
+
+
+}

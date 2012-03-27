@@ -1,0 +1,51 @@
+<?php
+
+
+
+/**
+ * StaticPages
+ *
+ * @Table(name="static_pages")
+ * @Entity
+ */
+class StaticPages
+{
+    /**
+     * @var integer $idStaticPage
+     *
+     * @Column(name="id_static_page", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idStaticPage;
+
+    /**
+     * @var string $staticPageName
+     *
+     * @Column(name="static_page_name", type="string", length=32, nullable=false)
+     */
+    private $staticPageName;
+
+    /**
+     * @var text $staticPageContent
+     *
+     * @Column(name="static_page_content", type="text", nullable=false)
+     */
+    private $staticPageContent;
+
+    /**
+     * @var datetime $createdAt
+     *
+     * @Column(name="created_at", type="datetime", nullable=true)
+     */
+    private $createdAt;
+
+    /**
+     * @var datetime $updatedAt
+     *
+     * @Column(name="updated_at", type="datetime", nullable=true)
+     */
+    private $updatedAt;
+
+
+}

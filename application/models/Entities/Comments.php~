@@ -1,0 +1,74 @@
+<?php
+
+
+
+/**
+ * Comments
+ *
+ * @Table(name="comments")
+ * @Entity
+ */
+class Comments
+{
+    /**
+     * @var integer $idComment
+     *
+     * @Column(name="id_comment", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idComment;
+
+    /**
+     * @var string $content
+     *
+     * @Column(name="content", type="string", length=128, nullable=false)
+     */
+    private $content;
+
+    /**
+     * @var datetime $createdAt
+     *
+     * @Column(name="created_at", type="datetime", nullable=true)
+     */
+    private $createdAt;
+
+    /**
+     * @var datetime $updatedAt
+     *
+     * @Column(name="updated_at", type="datetime", nullable=true)
+     */
+    private $updatedAt;
+
+    /**
+     * @var Users
+     *
+     * @ManyToOne(targetEntity="Users")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_user", referencedColumnName="id_user")
+     * })
+     */
+    private $fidUser;
+
+    /**
+     * @var Products
+     *
+     * @ManyToOne(targetEntity="Products")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_product", referencedColumnName="id_product")
+     * })
+     */
+    private $fidProduct;
+
+    /**
+     * @var CommentStatusCodes
+     *
+     * @ManyToOne(targetEntity="CommentStatusCodes")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_comment_status_code", referencedColumnName="id_comment_status_code")
+     * })
+     */
+    private $fidCommentStatusCode;
+
+
+}

@@ -1,0 +1,75 @@
+<?php
+
+
+
+/**
+ * GenericProfiles
+ *
+ * @Table(name="generic_profiles")
+ * @Entity
+ */
+class GenericProfiles
+{
+    /**
+     * @var integer $idGenericProfile
+     *
+     * @Column(name="id_generic_profile", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idGenericProfile;
+
+    /**
+     * @var string $profileName
+     *
+     * @Column(name="profile_name", type="string", length=32, nullable=false)
+     */
+    private $profileName;
+
+    /**
+     * @var string $contactNumber
+     *
+     * @Column(name="contact_number", type="string", length=32, nullable=false)
+     */
+    private $contactNumber;
+
+    /**
+     * @var string $contactEmail
+     *
+     * @Column(name="contact_email", type="string", length=32, nullable=false)
+     */
+    private $contactEmail;
+
+    /**
+     * @var string $contactWebsite
+     *
+     * @Column(name="contact_website", type="string", length=64, nullable=true)
+     */
+    private $contactWebsite;
+
+    /**
+     * @var datetime $createdAt
+     *
+     * @Column(name="created_at", type="datetime", nullable=true)
+     */
+    private $createdAt;
+
+    /**
+     * @var datetime $updatedAt
+     *
+     * @Column(name="updated_at", type="datetime", nullable=true)
+     */
+    private $updatedAt;
+
+    /**
+     * @var Addresses
+     *
+     * @ManyToOne(targetEntity="Addresses")
+     * @JoinColumns({
+     *   @JoinColumn(name="fid_address", referencedColumnName="id_address")
+     * })
+     */
+    private $fidAddress;
+
+
+}

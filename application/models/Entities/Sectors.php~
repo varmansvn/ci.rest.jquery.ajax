@@ -1,0 +1,37 @@
+<?php
+
+
+
+/**
+ * Sectors
+ *
+ * @Table(name="sectors")
+ * @Entity
+ */
+class Sectors
+{
+    /**
+     * @var integer $idSector
+     *
+     * @Column(name="id_sector", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idSector;
+
+    /**
+     * @var string $sectorName
+     *
+     * @Column(name="sector_name", type="string", length=32, nullable=false)
+     */
+    private $sectorName;
+
+    /**
+     * @var string $sectorDetail
+     *
+     * @Column(name="sector_detail", type="string", length=128, nullable=true)
+     */
+    private $sectorDetail;
+
+
+}

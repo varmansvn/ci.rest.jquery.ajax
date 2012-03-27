@@ -1,0 +1,47 @@
+<?php
+
+
+
+/**
+ * Categories
+ *
+ * @Table(name="categories")
+ * @Entity
+ */
+class Categories
+{
+    /**
+     * @var integer $idCategory
+     *
+     * @Column(name="id_category", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCategory;
+
+    /**
+     * @var string $categoryName
+     *
+     * @Column(name="category_name", type="string", length=32, nullable=false)
+     */
+    private $categoryName;
+
+    /**
+     * @var string $categoryDetail
+     *
+     * @Column(name="category_detail", type="string", length=128, nullable=true)
+     */
+    private $categoryDetail;
+
+    /**
+     * @var Categories
+     *
+     * @ManyToOne(targetEntity="Categories")
+     * @JoinColumns({
+     *   @JoinColumn(name="id_parent", referencedColumnName="id_category")
+     * })
+     */
+    private $idParent;
+
+
+}

@@ -1,0 +1,30 @@
+<?php
+
+
+
+/**
+ * AttributeTypes
+ *
+ * @Table(name="attribute_types")
+ * @Entity
+ */
+class AttributeTypes
+{
+    /**
+     * @var integer $idAttributeType
+     *
+     * @Column(name="id_attribute_type", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idAttributeType;
+
+    /**
+     * @var string $attributeTypeValue
+     *
+     * @Column(name="attribute_type_value", type="string", length=32, nullable=false)
+     */
+    private $attributeTypeValue;
+
+
+}

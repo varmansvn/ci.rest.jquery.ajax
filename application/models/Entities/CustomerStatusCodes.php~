@@ -1,0 +1,30 @@
+<?php
+
+
+
+/**
+ * CustomerStatusCodes
+ *
+ * @Table(name="customer_status_codes")
+ * @Entity
+ */
+class CustomerStatusCodes
+{
+    /**
+     * @var integer $idCustomerStatusCode
+     *
+     * @Column(name="id_customer_status_code", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCustomerStatusCode;
+
+    /**
+     * @var string $customerStatusValue
+     *
+     * @Column(name="customer_status_value", type="string", length=32, nullable=true)
+     */
+    private $customerStatusValue;
+
+
+}
